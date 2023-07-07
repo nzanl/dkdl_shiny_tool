@@ -1,0 +1,61 @@
+server <- function(input, output, session) {
+  observe({ # Create a reactive observer
+    hide(selector = "#navbar li a[data-value=results]")
+    show(selector = "#navbar li a[data-value=hide]")
+  })
+  
+  output$tableOutput <- renderTable({
+    if(input$button > 0){
+      toggle(selector = "#navbar li a[data-value=results]")
+      toggle(selector = "#navbar li a[data-value=hide]")
+    }else{
+      NULL
+    }
+  })
+  
+  outputOptions(output, "tableOutput", suspendWhenHidden=F)
+  
+  nameList <- c("Q1", "Q2")
+  questionList <- c("Is er mantelzorg?", "Wat is het verwachte verloop?")
+  choiceNames <- list(c("Ja", "Nee"), 
+                  list(HTML("De toestand zal naar verwachting <p style='color:red;'>verbeteren.</p>"), 
+                    HTML("De toestand zal naar verwachting <p style='color:red;'>gelijk blijven.</p>"), 
+                    HTML("De toestand zal naar verwachting <p style='color:red;'>verslechteren.</p>")
+                  ))
+  choiceValues <- list(c(1:2), c(1:3))
+  
+  all_radios <- list()
+  for (i in 1:length(nameList)) {
+    all_radios[[i]] <- p(radioButtons(inputId = nameList[i], 
+                                      label = questionList[i], 
+                                      choiceNames = choiceNames[[i]],
+                                      choiceValues = choiceValues[[i]], 
+                                      inline = TRUE, 
+                                      selected = 0))
+  }
+  
+  output$myradios <- renderUI(all_radios)
+  
+  output$cm_txt_output <- renderText({
+    return(paste("De gekozen antwoordopties:", input$Q1, "and", input$Q2, sep=" "))
+  })
+  output$cp_txt_output <- renderText({
+    return(paste("Bij deze antwoordopties horen:", input$Q1, "and", input$Q2, sep=" "))
+  })
+  
+  observeEvent(input$button, {
+    k <- input$button %% 2
+    #print(k)
+    if (k==1) {
+      hide("myradios")
+      show("cm_txt_output")
+    }else {
+      show("myradios")
+      hide("cm_txt_output")
+    }
+  }, ignoreNULL = FALSE)
+  
+}
+
+
+
