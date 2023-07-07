@@ -11,7 +11,7 @@ ui <- tagList(
              h1("Initiële vragen"), # HTML
              uiOutput("myradios"),
              h1("DKDL vragen"),
-             textOutput("txt"),
+             textOutput("cm_txt_output"),
              actionButton("button", "Doe actie button")
     ),
     tabPanel(
@@ -19,12 +19,13 @@ ui <- tagList(
       value = "results",
       tableOutput("tableOutput"),
       h1("Het bijbehorende cliëntprofiel is"),
-      textOutput("txt1")
+      textOutput("cp_txt_output")
     ),
     tabPanel(
       title = "Toelichting bij het DKDL model",
       value = "hide", # The value that should be sent when tabsetPanel reports that this tab is selected. If omitted and tabsetPanel has an id, then the title will be used.
-      h1("Dit tabblad wordt vervangen door results")
+      h1("Toelichting"),
+      p("Het draagkracht draaglast model werkt via een case-mix vragenlijst. Na beantwoording van de vragenlijst wordt er automatisch een cliëntprofiel afgeleid.")
     )
   )
 )
@@ -67,10 +68,10 @@ server <- function(input, output, session) {
   
   output$myradios <- renderUI(all_radios)
   
-  output$txt <- renderText({
+  output$cm_txt_output <- renderText({
     return(paste("De gekozen antwoordopties:", input$Q1, "and", input$Q2, sep=" "))
   })
-  output$txt1 <- renderText({
+  output$cp_txt_output <- renderText({
     return(paste("Bij deze antwoordopties horen:", input$Q1, "and", input$Q2, sep=" "))
   })
   
@@ -79,10 +80,10 @@ server <- function(input, output, session) {
     #print(k)
     if (k==1) {
       hide("myradios")
-      show("txt")
+      show("cm_txt_output")
     }else {
       show("myradios")
-      hide("txt")
+      hide("cm_txt_output")
     }
   }, ignoreNULL = FALSE)
   
@@ -90,25 +91,3 @@ server <- function(input, output, session) {
 
 shinyApp(ui = ui, server = server)
 
-
-# ui <- fluidPage(
-#   radioButtons("rb", "Choose one:",
-#                choiceNames = list(
-#                  icon("calendar"),
-#                  HTML("<p style='color:red;'>Red Text</p>"),
-#                  "Normal text"
-#                ),
-#                choiceValues = list(
-#                  "icon", "html", "text"
-#                )),
-#   textOutput("txt")
-# )
-# 
-# server <- function(input, output) {
-#   output$txt <- renderText({
-#     paste("You chose", input$rb)
-#   })
-# }
-# 
-# shinyApp(ui, server)
-# }
