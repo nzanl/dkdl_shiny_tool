@@ -5,17 +5,16 @@ ui <- tagList(
   navbarPage(
     title = "Draagkracht Draaglast tool",
     id = "navbar",
-    tabPanel(title = "Case-mix vragenlijst",
-             value = "formulier",
-             #h1("Initiële vragen"),
-             h1("DKDL vragen"),
-             uiOutput("myradios"),
-             actionButton('jumpToP2', 'Leid cliëntprofiel af')
+    tabPanel(
+      title = "Case-mix vragenlijst",
+      value = "formulier",
+      h1("DKDL vragen"),
+      uiOutput("myradios"),
+      actionButton('jumpToP2', 'Leid cliëntprofiel af')
     ),
     tabPanel(
       title = "Cliëntprofiel",
       value = "results",
-      #tableOutput("tableOutput"),
       textOutput("cm_txt_output"),
       actionButton('jumpToP1', 'Ga terug naar de vragenlijst')
     ),
