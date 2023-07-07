@@ -1,4 +1,6 @@
 server <- function(input, output, session) {
+  
+  # place holder for DKDL model
   determine_cp <- function(Q1, Q2){
     if(is.null(Q1) | is.null(Q2)) return(-1)
     if(Q1 == 1 & Q2 == 1){return(1)}
@@ -6,23 +8,6 @@ server <- function(input, output, session) {
     if(Q1 == 1 & Q2 > 1){return(3)}
     if(Q1 > 1 & Q2 > 1){return(4)}
   }
-  
-  observe({ # Create a reactive observer
-    #hide(selector = "#navbar li a[data-value=results]")
-    #show(selector = "#navbar li a[data-value=toelichting]")
-  })
-
-  output$tableOutput <- renderTable({
-    if(input$button > 0){
-      toggle(selector = "#navbar li a[data-value=formulier]")
-      toggle(selector = "#navbar li a[data-value=results]")
-    }else{
-      NULL
-    }
-  })
-  
-  outputOptions(output, name = "tableOutput", 
-                suspendWhenHidden = FALSE)
   
   ##################################################################################
   # Radiobuttons
@@ -49,10 +34,11 @@ server <- function(input, output, session) {
   ##################################################################################
   
   output$cm_txt_output <- renderText({
-    return(paste("De gekozen antwoordopties leiden af naar cliëntprofiel ", determine_cp(input$Q1, input$Q2), sep=""))
+    return(if(determine_cp(input$Q1, input$Q2) != -1){
+      paste("De gekozen antwoordopties leiden af naar cliëntprofiel ", determine_cp(input$Q1, input$Q2), sep="")}
+    else {paste("Nog niet alle vragen zijn beantwoord")})
   })
 
-  #############################################
   observeEvent(input$jumpToP2, {
     updateTabsetPanel(session, "navbar",
                       selected = "results")
