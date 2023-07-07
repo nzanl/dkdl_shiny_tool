@@ -1,0 +1,11 @@
+name: dkdl_shiny_tool
+title:
+username:
+account: gsverhoeven
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9422836
+bundleId: 7431413
+url: https://gsverhoeven.shinyapps.io/dkdl_shiny_tool/
+when: 1688738471.70245
+lastSyncTime: 1688738471.70247

@@ -1,3 +1,5 @@
+library(shinyjs)
+
 ui <- tagList(
   useShinyjs(),
   navbarPage(
