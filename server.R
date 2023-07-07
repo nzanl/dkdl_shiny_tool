@@ -1,20 +1,31 @@
 server <- function(input, output, session) {
-  observe({ # Create a reactive observer
-    hide(selector = "#navbar li a[data-value=results]")
-    show(selector = "#navbar li a[data-value=hide]")
-  })
+  determine_cp <- function(Q1, Q2){
+    if(is.null(Q1) | is.null(Q2)) return(-1)
+    if(Q1 == 1 & Q2 == 1){return(1)}
+    if(Q1 > 1 & Q2 == 1){return(2)}
+    if(Q1 == 1 & Q2 > 1){return(3)}
+    if(Q1 > 1 & Q2 > 1){return(4)}
+  }
   
+  observe({ # Create a reactive observer
+    #hide(selector = "#navbar li a[data-value=results]")
+    #show(selector = "#navbar li a[data-value=toelichting]")
+  })
+
   output$tableOutput <- renderTable({
     if(input$button > 0){
+      toggle(selector = "#navbar li a[data-value=formulier]")
       toggle(selector = "#navbar li a[data-value=results]")
-      toggle(selector = "#navbar li a[data-value=hide]")
     }else{
       NULL
     }
   })
   
-  outputOptions(output, "tableOutput", suspendWhenHidden=F)
+  outputOptions(output, name = "tableOutput", 
+                suspendWhenHidden = FALSE)
   
+  ##################################################################################
+  # Radiobuttons
   nameList <- c("Q1", "Q2")
   questionList <- c("Is er mantelzorg?", "Wat is het verwachte verloop?")
   choiceNames <- list(c("Ja", "Nee"), 
@@ -34,26 +45,23 @@ server <- function(input, output, session) {
                                       selected = 0))
   }
   
-  output$myradios <- renderUI(all_radios)
+  output$myradios <- renderUI(all_radios) # Renders reactive HTML using the Shiny UI library.
+  ##################################################################################
   
   output$cm_txt_output <- renderText({
-    return(paste("De gekozen antwoordopties:", input$Q1, "and", input$Q2, sep=" "))
+    return(paste("De gekozen antwoordopties leiden af naar cliëntprofiel ", determine_cp(input$Q1, input$Q2), sep=""))
   })
-  output$cp_txt_output <- renderText({
-    return(paste("Bij deze antwoordopties horen:", input$Q1, "and", input$Q2, sep=" "))
+
+  #############################################
+  observeEvent(input$jumpToP2, {
+    updateTabsetPanel(session, "navbar",
+                      selected = "results")
   })
   
-  observeEvent(input$button, {
-    k <- input$button %% 2
-    #print(k)
-    if (k==1) {
-      hide("myradios")
-      show("cm_txt_output")
-    }else {
-      show("myradios")
-      hide("cm_txt_output")
-    }
-  }, ignoreNULL = FALSE)
+  observeEvent(input$jumpToP1, {
+    updateTabsetPanel(session, "navbar",
+                      selected = "formulier")
+  })
   
 }
 
