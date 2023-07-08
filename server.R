@@ -3,7 +3,7 @@ server <- function(input, output, session) {
   source("dkdl_model.R", local = TRUE)
   source("casemix_vragen.R", local = TRUE)
   
-  all_radios <- casemix_vragen(filename = "casemix_vragenlijst.xslx")
+  all_radios <- casemix_vragen(filename = "casemix_vragenlijst.xlsx")
   output$myradios <- renderUI(all_radios) # Renders reactive HTML using the Shiny UI library.
   
   output$cm_txt_output <- renderText({
