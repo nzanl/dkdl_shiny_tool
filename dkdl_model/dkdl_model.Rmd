@@ -1,0 +1,113 @@
+---
+title: 'DKDL model v2.0 partykit version'
+author: "Gertjan Verhoeven"
+date: "10/7/2023"
+output:
+  pdf_document: default
+  html_document: default
+editor_options:
+  chunk_output_type: inline
+---
+
+This notebook showcases the final DKDL model implemented as a partykit model.
+This model can be used as a reference implementation, or as a backend in apps.
+
+The partykit model "dkdl" consists of three R files.
+`partykit_dkdl.R` contains the caret wrapper for training (fitting) the model to data.
+`dkdl_model.R` contains the full node structure of the decision tree.
+`dkdl_splits.R` contains the split functions that partition the data while it descends down into the node structure.
+
+The model is developed as a regression tree.
+
+# Load packages
+
+```{r}
+library(partykit)
+library(data.table)
+library(tidyverse)
+library(caret)
+```
+
+
+
+## Simulate fake data
+
+```{r}
+source("partykit_dkdl.R")
+```
+
+
+```{r}
+source("dataprep_fake_dkdl.R")
+
+df_orig <- df
+```
+
+Convert df to subset needed for the DKDL model.
+
+```{r}
+col_names <- c("VR_verloop.4", 
+                    "VR_technisch_infuusbehandeling",
+                    "DK",
+                    "DL",
+                    "OB",
+                    "y")
+
+df <- df_orig %>% select(all_of(col_names))
+```
+
+
+## Caret
+
+```{r}
+fitControl <- trainControl(method = "repeatedcv",
+                           repeats = 1,
+                           verboseIter = FALSE)
+```
+
+```{r}
+set.seed(123)
+my_formula <- as.formula(paste("y ~ ."))
+
+pk.fit <- train(my_formula, 
+                data = df, 
+                         method = partykit_dkdl, 
+                         trControl = fitControl)
+
+df$cluster_id <- predict(pk.fit$finalModel, type = "node")
+pk.fit
+```
+
+```{r}
+df <- add_cluster_labels(df, modelNaam = "Draagkracht/draaglast model variant3",
+                         config_dir = "../../config/")
+
+table(df$cluster_id)
+```
+```{r}
+res <- df %>%
+    group_by(cluster_sort_nr, hoofd_categorie, subgroep, categorie_soort, categorie_soort_sort_order
+) %>%
+    summarise(perc_clienten = round(n()/nrow(df), 3),
+              n_obs = n(), 
+              avg_uren = round(mean(y),1))
+
+```
+
+```{r fig.width = 15, fig.height=10}
+source("dkdl_model.R")
+
+
+
+treemodel <- party(pn, data = df, 
+                   fitted = data.frame("(fitted)" = fitted_node(pn, data = df),
+                                       "(response)" = df$y,
+                                       check.names = FALSE), # needed for the funky names
+                   terms = terms(AvgDuurWtd_4 ~ ., data = df) # model formula
+)
+
+treemodel <- as.constparty(treemodel)
+
+treemodel
+```
+
