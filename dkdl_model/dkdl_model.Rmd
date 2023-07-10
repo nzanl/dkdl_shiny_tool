@@ -112,4 +112,10 @@ treemodel <- as.constparty(treemodel)
 
 treemodel
 ```
+```{r}
+table(predict(treemodel, type = "node"))
+```
+```{r}
+# hier kunnen we cluster naam aan koppelen
+```
 

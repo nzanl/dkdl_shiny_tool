@@ -7,8 +7,8 @@ server <- function(input, output, session) {
   output$myradios <- renderUI(all_radios) # Renders reactive HTML using the Shiny UI library.
   
   output$cm_txt_output <- renderText({
-    return(if(determine_cp(input$Q1, input$Q2) != -1){
-      paste("De gekozen antwoordopties leiden af naar cliëntprofiel ", determine_cp(input$Q1, input$Q2), sep="")}
+    return(if(determine_cp(input) != -1){
+      paste("De gekozen antwoordopties leiden af naar cliëntprofiel ", determine_cp(input), sep="")}
     else {paste("Nog niet alle vragen zijn beantwoord")})
   })
 
