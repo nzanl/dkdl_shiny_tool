@@ -79,11 +79,13 @@ pk.fit
 ```
 
 ```{r}
+source("add_cluster_labels.R")
 df <- add_cluster_labels(df, modelNaam = "Draagkracht/draaglast model variant3",
-                         config_dir = "../../config/")
+                         config_dir = "./")
 
 table(df$cluster_id)
 ```
+
 ```{r}
 res <- df %>%
     group_by(cluster_sort_nr, hoofd_categorie, subgroep, categorie_soort, categorie_soort_sort_order
@@ -103,7 +105,7 @@ treemodel <- party(pn, data = df,
                    fitted = data.frame("(fitted)" = fitted_node(pn, data = df),
                                        "(response)" = df$y,
                                        check.names = FALSE), # needed for the funky names
-                   terms = terms(AvgDuurWtd_4 ~ ., data = df) # model formula
+                   terms = terms(y ~ ., data = df) # model formula
 )
 
 treemodel <- as.constparty(treemodel)

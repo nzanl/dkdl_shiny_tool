@@ -1,0 +1,86 @@
+row_id;cluster_id;hoofd_categorie;subgroep;cluster_sort_nr;model_nr;model_naam;categorie_soort;categorie_soort_sort_order
+6;15;Verminderd fysiek functioneren;ADL groep 1;1;1;combinatie model;nvt;1
+5;14;Verminderd fysiek functioneren;ADL groep 2;2;1;combinatie model;nvt;1
+4;13;Verminderd fysiek functioneren;ADL groep 3;3;1;combinatie model;nvt;1
+3;12;Verminderd fysiek functioneren;ADL groep 4;4;1;combinatie model;nvt;1
+2;11;Verminderd fysiek functioneren;ADL groep 5;5;1;combinatie model;nvt;1
+1;10;Verminderd fysiek functioneren;ADL groep 6;6;1;combinatie model;nvt;1
+7;17;Verminderd cognitief functioneren;ADL groep 1;7;1;combinatie model;nvt;1
+8;18;Verminderd cognitief functioneren;ADL groep 2;8;1;combinatie model;nvt;1
+9;21;Lichte verpleegtechnische zorgvraag;ADL groep 1;9;1;combinatie model;nvt;1
+10;22;Lichte verpleegtechnische zorgvraag;ADL groep 2;10;1;combinatie model;nvt;1
+11;23;Zware verpleegtechnische zorgvraag;n.v.t.;11;1;combinatie model;nvt;1
+13;25;Complexe technische zorg (infuusbeh.);ADL groep 1-2;12;1;combinatie model;nvt;1
+14;26;Complexe technische zorg (infuusbeh.);ADL groep 3-6;13;1;combinatie model;nvt;1
+15;27;Palliatief terminale  zorgvraag;n.v.t.;14;1;combinatie model;nvt;1
+16;6;Verminderd fysiek functioneren;ADL groep 1;1;2;RAI-geinspireerd model;nvt;1
+17;8;Verminderd fysiek functioneren;ADL groep 2;2;2;RAI-geinspireerd model;nvt;1
+18;10;Verminderd fysiek functioneren;ADL groep 3;3;2;RAI-geinspireerd model;nvt;1
+19;11;Verminderd fysiek functioneren;ADL groep 4;4;2;RAI-geinspireerd model;nvt;1
+20;13;Verminderd psychisch functioneren en/of gedragsproblemen;ADL groep 1;5;2;RAI-geinspireerd model;nvt;1
+21;15;Verminderd psychisch functioneren en/of gedragsproblemen;ADL groep 2;6;2;RAI-geinspireerd model;nvt;1
+22;16;Verminderd psychisch functioneren en/of gedragsproblemen;ADL groep 3;7;2;RAI-geinspireerd model;nvt;1
+23;18;Verminderd cognitief functioneren;ADL groep 1;8;2;RAI-geinspireerd model;nvt;1
+24;20;Verminderd cognitief functioneren;ADL groep 2;9;2;RAI-geinspireerd model;nvt;1
+25;21;Verminderd cognitief functioneren;ADL groep 3;10;2;RAI-geinspireerd model;nvt;1
+26;24;Klinisch complex;ADL groep 1;11;2;RAI-geinspireerd model;nvt;1
+27;25;Klinisch complex;ADL groep 2;12;2;RAI-geinspireerd model;nvt;1
+28;26;Klinisch complex;Palliatief terminale zorg;13;2;RAI-geinspireerd model;nvt;1
+29;28;Gespecialiseerde zorg;ADL groep 1;14;2;RAI-geinspireerd model;nvt;1
+30;29;Gespecialiseerde zorg;ADL groep 2;15;2;RAI-geinspireerd model;nvt;1
+31;7;Hoge draagkracht, lage draaglast;OB laag;1;3;Draagkracht/draaglast model;DKDL;1
+32;8;Hoge draagkracht, lage draaglast;OB midden;2;3;Draagkracht/draaglast model;DKDL;1
+33;9;Hoge draagkracht, lage draaglast;OB hoog;3;3;Draagkracht/draaglast model;DKDL;1
+34;12;Hoge draagkracht, hoge draaglast;OB laag;4;3;Draagkracht/draaglast model;DKDL;1
+35;13;Hoge draagkracht, hoge draaglast;OB midden;5;3;Draagkracht/draaglast model;DKDL;1
+36;14;Hoge draagkracht, hoge draaglast;OB hoog;6;3;Draagkracht/draaglast model;DKDL;1
+37;18;Lage draagkracht, lage draaglast;OB laag;7;3;Draagkracht/draaglast model;DKDL;1
+38;19;Lage draagkracht, lage draaglast;OB midden;8;3;Draagkracht/draaglast model;DKDL;1
+39;20;Lage draagkracht, lage draaglast;OB hoog;9;3;Draagkracht/draaglast model;DKDL;1
+40;23;Lage draagkracht, hoge draaglast;OB laag;10;3;Draagkracht/draaglast model;DKDL;1
+41;24;Lage draagkracht, hoge draaglast;OB midden;11;3;Draagkracht/draaglast model;DKDL;1
+42;25;Lage draagkracht, hoge draaglast;OB hoog;12;3;Draagkracht/draaglast model;DKDL;1
+43;26;Palliatief terminale  zorgvraag;n.v.t.;13;3;Draagkracht/draaglast model;overig;1
+44;27;Complexe technische zorg (infuusbeh.);n.v.t.;14;3;Draagkracht/draaglast model;overig;1
+45;4;Profiel 1;ADL groep 1;1;4;Clientprofielen 1.0;nvt;1
+46;5;Profiel 2;ADL groep 2;2;4;Clientprofielen 1.0;nvt;1
+47;9;Profiel 3;ADL groep 3;3;4;Clientprofielen 1.0;nvt;1
+48;11;Profiel 4;ADL groep 4;4;4;Clientprofielen 1.0;nvt;1
+49;12;Profiel 5;ADL groep 5;5;4;Clientprofielen 1.0;nvt;1
+50;13;Profiel 6;ADL groep 6;6;4;Clientprofielen 1.0;nvt;1
+51;15;Profiel 7;ADL groep 7;7;4;Clientprofielen 1.0;nvt;1
+52;16;Profiel 8;ADL groep 8;8;4;Clientprofielen 1.0;nvt;1
+53;18;Profiel 9;Palliatief terminale zorg;9;4;Clientprofielen 1.0;nvt;1
+54;19;Profiel 10;Palliatief terminale zorg;10;4;Clientprofielen 1.0;nvt;1
+55;7;Verminderd lichamelijk functioneren;ADL groep 1 (ADL score 0);1;5;Leervermogen model;nvt;1
+56;8;Verminderd lichamelijk functioneren;ADL groep 2 (ADL score 1);2;5;Leervermogen model;nvt;1
+57;10;Verminderd lichamelijk functioneren, hoge ADL behoefte;leervermogen niet beperkt;3;5;Leervermogen model;nvt;1
+58;11;Verminderd lichamelijk functioneren, hoge ADL behoefte;Beperkt leervermogen;4;5;Leervermogen model;nvt;1
+59;13;Verminderd cognitief OF psychisch functioneren;leervermogen niet beperkt;5;5;Leervermogen model;nvt;1
+60;14;Verminderd cognitief OF psychisch functioneren;Beperkt leervermogen;6;5;Leervermogen model;nvt;1
+61;16;Verminderd cognitief EN psychisch functioneren;ontvangt mantelzorg;7;5;Leervermogen model;nvt;1
+62;17;Verminderd cognitief EN psychisch functioneren;ontvangt geen mantelzorg;8;5;Leervermogen model;nvt;1
+63;18;Complexe technische zorg (infuusbeh.);n.v.t.;9;5;Leervermogen model;nvt;1
+64;19;Palliatief terminale  zorgvraag;n.v.t.;10;5;Leervermogen model;nvt;1
+65;3;Profiel 1;n.v.t.;1;6;Datagedreven model;nvt;1
+66;4;Profiel 2;n.v.t.;2;6;Datagedreven model;nvt;1
+67;8;Profiel 3;n.v.t.;3;6;Datagedreven model;nvt;1
+68;9;Profiel 4;n.v.t.;4;6;Datagedreven model;nvt;1
+69;11;Profiel 5;n.v.t.;5;6;Datagedreven model;nvt;1
+70;12;Profiel 6;n.v.t.;6;6;Datagedreven model;nvt;1
+71;14;Profiel 7;n.v.t.;7;6;Datagedreven model;nvt;1
+72;15;Profiel 8;n.v.t.;8;6;Datagedreven model;nvt;1
+31;18;Draagkrachtig, geen verhoogde draaglast;OB laag;3;7;Draagkracht/draaglast model variant3;DKDL;1
+32;19;Draagkrachtig, geen verhoogde draaglast;OB midden;4;7;Draagkracht/draaglast model variant3;DKDL;1
+33;20;Draagkrachtig, geen verhoogde draaglast;OB hoog;5;7;Draagkracht/draaglast model variant3;DKDL;1
+34;23;Draagkrachtig, verhoogde draaglast;OB laag;6;7;Draagkracht/draaglast model variant3;DKDL;3
+35;24;Draagkrachtig, verhoogde draaglast;OB midden;7;7;Draagkracht/draaglast model variant3;DKDL;3
+36;25;Draagkrachtig, verhoogde draaglast;OB hoog;8;7;Draagkracht/draaglast model variant3;DKDL;3
+37;7;Verminderd draagkrachtig, geen verhoogde draaglast;OB laag;9;7;Draagkracht/draaglast model variant3;DKDL;2
+38;8;Verminderd draagkrachtig, geen verhoogde draaglast;OB midden;10;7;Draagkracht/draaglast model variant3;DKDL;2
+39;9;Verminderd draagkrachtig, geen verhoogde draaglast;OB hoog;11;7;Draagkracht/draaglast model variant3;DKDL;2
+40;12;Verminderd draagkrachtig, verhoogde draaglast;OB laag;12;7;Draagkracht/draaglast model variant3;DKDL;4
+41;13;Verminderd draagkrachtig, verhoogde draaglast;OB midden;13;7;Draagkracht/draaglast model variant3;DKDL;4
+42;14;Verminderd draagkrachtig, verhoogde draaglast;OB hoog;14;7;Draagkracht/draaglast model variant3;DKDL;4
+43;26;Hoogcomplexe technische thuiszorg (infuusbeh.);n.v.t.;2;7;Draagkracht/draaglast model variant3;overig;5
+44;27;Palliatief terminale  zorgvraag;n.v.t.;1;7;Draagkracht/draaglast model variant3;overig;6
