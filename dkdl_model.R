@@ -20,15 +20,15 @@ generate_test_input <- function(){
 determine_cp <- function(input){
   # input contains all casemix items
   # Initiele vragen:
-  if(input$Q1 == 2) return("Medische kindzorg thuis")
-  if(input$Q2 == 2) return("Palliatief-terminale zorgvraag < 3 maanden")
-  if(input$Q3 == 2) return("Tijdelijk DKDL profiel")
-  if(input$Q3 == 3) return("Geen DKDL beschikbaar")
+  # if(input$Q1 == 2) return("Medische kindzorg thuis")
+  # if(input$Q2 == 2) return("Palliatief-terminale zorgvraag < 3 maanden")
+  # if(input$Q3 == 2) return("Tijdelijk DKDL profiel")
+  # if(input$Q3 == 3) return("Geen DKDL beschikbaar")
   
   # construct a df record with required colnames
   # PM deduce levels from casemix csv
   # Add check for all inputs to be filled in
-  print(as.integer(input$Q2) - 1)
+  #print(as.integer(input$Q2) - 1)
   df <- data.frame(VR_technisch_infuusbehandeling = 0,
                    VR_psychisch = factor(as.integer(input$Q4), levels = 1:3),
                    VR_geheugen = factor(as.integer(input$Q5), levels = 1:3),
@@ -49,7 +49,7 @@ determine_cp <- function(input){
                    VR_technisch_zwachtelen = 0,
                    y = 1,
                    cm_VragenlijstID = 1)
-  print(df)
+  #print(df)
   # then apply DK DL OB transform
   df_tf <- dkdl_transformations(df)
   # then create party object
