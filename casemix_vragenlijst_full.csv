@@ -1,8 +1,8 @@
 "QuestionId";"QuestionName";"ChoiceName";"ChoiceValue"
 "Q1";"Medische kindzorg thuis";"De cliënt is 18 jaar of ouder. ";1
 "Q1";"Medische kindzorg thuis";"De cliënt is jonger dan 18 jaar. ";2
-"Q2";"Palliatief-terminale zorg <3 maanden";"De cliënt ontvangt palliatief terminale zorg en heeft een levensverwachting van minder dan drie maanden. ";1
-"Q2";"Palliatief-terminale zorg <3 maanden";"De cliënt ontvangt geen palliatief terminale zorg en heeft geen levensverwachting van minder dan drie maanden. ";2
+"Q2";"Palliatief-terminale zorg <3 maanden";"De cliënt ontvangt geen palliatief terminale zorg en heeft geen levensverwachting van minder dan drie maanden. ";1
+"Q2";"Palliatief-terminale zorg <3 maanden";"De cliënt ontvangt palliatief terminale zorg en heeft een levensverwachting van minder dan drie maanden. ";2
 "Q3";"Beschikbaarheid DKDL";"DKDL informatie is beschikbaar. ";1
 "Q3";"Beschikbaarheid DKDL";"DKDL informatie is nog niet beschikbaar en de verwachting is dat dit op korte termijn (max. 4 weken) beschikbaar komt. ";2
 "Q3";"Beschikbaarheid DKDL";"DKDL informatie is niet beschikbaar";3
