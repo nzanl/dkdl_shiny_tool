@@ -1,8 +1,5 @@
 # DKDL model v2.0
 
-# splits
-source("dkdl_splits.R", local = TRUE)
-
 # node structure
 
 pn <- partynode(id = 1L, split = sp_palliatief_verloop,
