@@ -1,7 +1,7 @@
 add_cluster_labels <- function(df, modelNaam, config_dir = "../config/"){
   df <- as.data.table(df)
   df <- df %>%
-    select(!any_of(c("cluster_sort_nr", "hoofd_categorie", "subgroep", "categorie_soort")))
+    select(!any_of(c("cluster_sort_nr", "hoofd_categorie", "subgroep", "categorie_soort", "categorie_soort_sort_order")))
   
   kennis_clusters <- as.data.table(read.csv2(paste0(config_dir, "cluster_labels.csv")))
   kennis_clusters <- kennis_clusters %>% 
