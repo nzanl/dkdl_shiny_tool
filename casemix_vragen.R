@@ -1,13 +1,14 @@
 library(tidyverse)
 
-casemix_vragen <- function(filename = NA){
+casemix_vragen <- function(filename = NA, subset = NA){
   if(exists("choiceNames")) rm(choiceNames)
   
   # inlezen casemix vragenlijst
   if(!is.na(filename)){
     casemix_vragenlijst <- read.csv2(filename)
   }
-
+  casemix_vragenlijst <- casemix_vragenlijst %>% 
+    filter(QuestionGroup == subset)
   # process lijst
   nameList <- unique(casemix_vragenlijst$QuestionId)
   questionList <- unique(casemix_vragenlijst$QuestionName)

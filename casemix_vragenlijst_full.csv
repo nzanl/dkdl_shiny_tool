@@ -1,41 +1,41 @@
-"QuestionId";"QuestionName";"ChoiceName";"ChoiceValue"
-"Q1";"Medische kindzorg thuis";"De cliënt is 18 jaar of ouder. ";1
-"Q1";"Medische kindzorg thuis";"De cliënt is jonger dan 18 jaar. ";2
-"Q2";"Palliatief-terminale zorg <3 maanden";"De cliënt ontvangt geen palliatief terminale zorg en heeft geen levensverwachting van minder dan drie maanden. ";1
-"Q2";"Palliatief-terminale zorg <3 maanden";"De cliënt ontvangt palliatief terminale zorg en heeft een levensverwachting van minder dan drie maanden. ";2
-"Q3";"Beschikbaarheid DKDL";"DKDL informatie is beschikbaar. ";1
-"Q3";"Beschikbaarheid DKDL";"DKDL informatie is nog niet beschikbaar en de verwachting is dat dit op korte termijn (max. 4 weken) beschikbaar komt. ";2
-"Q3";"Beschikbaarheid DKDL";"DKDL informatie is niet beschikbaar";3
-"Q4";"Psychisch functioneren en gedrag";"De cliënt heeft geen psychische- of gedragsproblemen waarvan de cliënt zelf of zijn/haar omgeving problemen ondervindt in het dagelijks leven.";1
-"Q4";"Psychisch functioneren en gedrag";"De cliënt heeft één of meerdere lichte psychische- en/of gedragsproblemen waarvan de cliënt zelf of zijn/haar omgeving problemen ondervindt in het dagelijks leven (bijv. voorstadium van dementie, somberheid, zorgen maken, onrustig zijn). ";2
-"Q4";"Psychisch functioneren en gedrag";"De cliënt heeft één of meerdere zware psychische- en/of gedragsproblemen waarvan de cliënt zelf of zijn/haar omgeving problemen ondervindt in het dagelijks leven (bijv. psychiatrische stoornis, zware depressie, dementie met gedragsproblematiek, zware verslaving, zorgmijding). ";3
-"Q5";"Geheugen";"De cliënt heeft geen geheugenproblemen. ";1
-"Q5";"Geheugen";"De cliënt heeft soms geheugenproblemen (bijv. af en toe vergeetachtig ten gevolge van het ouder worden). ";2
-"Q5";"Geheugen";"De cliënt heeft vaak/altijd geheugenproblemen. ";3
-"Q6";"Sociaal netwerk";"De cliënt heeft betekenisvolle sociale contacten. ";1
-"Q6";"Sociaal netwerk";"De cliënt heeft weinig betekenisvolle sociale contacten. ";2
-"Q6";"Sociaal netwerk";"De cliënt heeft geen betekenisvolle sociale contacten. ";3
-"Q7";"Mantelzorg";"De cliënt ontvangt mantelzorg. ";1
-"Q7";"Mantelzorg";"De cliënt ontvangt geen mantelzorg. ";2
-"Q8";"Verwachte verloop ";"De toestand en/of zelfstandigheid van de cliënt zal naar verwachting verbeteren de komende maand. ";1
-"Q8";"Verwachte verloop ";"De toestand en/of zelfstandigheid van de cliënt blijft naar verwachting (relatief) stabiel de komende maand. ";2
-"Q8";"Verwachte verloop ";"De toestand en/of zelfstandigheid van de cliënt zal naar verwachting verslechteren de komende maand. ";3
-"Q9";"Continentie";"De cliënt is volledig continent, zowel voor urine als voor ontlasting. ";1
-"Q9";"Continentie";"De cliënt is incontinent voor urine. ";2
-"Q9";"Continentie";"De cliënt is incontinent voor ontlasting. ";3
-"Q9";"Continentie";"De cliënt is incontinent voor urine én ontlasting. ";4
-"Q10";"Wassen/douchen";"De cliënt wast/doucht zich zelfstandig. ";1
-"Q10";"Wassen/douchen";"De cliënt heeft gedeeltelijke hulp van derden nodig (bijv. aansporing, toezicht of fysieke ondersteuning) om zich te wassen/douchen. ";2
-"Q10";"Wassen/douchen";"De cliënt moet volledig geholpen worden door derden om zich te wassen/douchen.";3
-"Q11";"Medicatiegebruik (Het bestellen van medicatie valt hier niet onder.)";"De cliënt heeft geen medicatie of neemt zijn/haar medicatie zelfstandig in. ";1
-"Q11";"Medicatiegebruik (Het bestellen van medicatie valt hier niet onder.)";"De cliënt heeft gedeeltelijke hulp van derden nodig (bijv. medicatie aanreiken of klaarzetten, medicatie deels toedienen, aansporing of toezicht) bij het nemen van (een deel van de) medicatie. ";2
-"Q11";"Medicatiegebruik (Het bestellen van medicatie valt hier niet onder.)";"Het toedienen van alle medicatie moet volledig worden overgenomen door derden. ";3
-"Q12";"Verpleegtechnische zorgvraag";"De cliënt heeft geen verpleegtechnische zorgvraag. ";1
-"Q12";"Verpleegtechnische zorgvraag";"Zwachtelen (bijv. compressief zwachtelen) ";2
-"Q12";"Verpleegtechnische zorgvraag";"Complexe wond(en) (na circa 3 weken nog geen wondsluiting plaatsgevonden/verwacht) ";3
-"Q12";"Verpleegtechnische zorgvraag";"Sonde (bijv. sondevoeding toedienen) ";4
-"Q12";"Verpleegtechnische zorgvraag";"Eenmalige- of verblijfskatheter (bijv. blaaskatheterisatie uitvoeren, blaasspoeling) ";5
-"Q12";"Verpleegtechnische zorgvraag";"Overige blaas- en nierkatheterisatie (bijv. suprapubische katheterisatie, nefrostoma) ";6
-"Q12";"Verpleegtechnische zorgvraag";"Darmstoma (bijv. stomamateriaal verwisselen)";7
-"Q12";"Verpleegtechnische zorgvraag";"Darmspoeling (bijv. structureel klysma toedienen, darmspoeling) ";8
-"Q12";"Verpleegtechnische zorgvraag";"Injecties (bijv. subcutaan of intramusculair injecteren)";9
+"QuestionId";"QuestionName";"ChoiceName";"ChoiceValue";"QuestionGroup"
+"Q1";"Medische kindzorg thuis";"De cliënt is 18 jaar of ouder. ";1;"Initiële vragen"
+"Q1";"Medische kindzorg thuis";"De cliënt is jonger dan 18 jaar. ";2;"Initiële vragen"
+"Q2";"Palliatief-terminale zorg <3 maanden";"De cliënt ontvangt geen palliatief terminale zorg en heeft geen levensverwachting van minder dan drie maanden. ";1;"Initiële vragen"
+"Q2";"Palliatief-terminale zorg <3 maanden";"De cliënt ontvangt palliatief terminale zorg en heeft een levensverwachting van minder dan drie maanden. ";2;"Initiële vragen"
+"Q3";"Beschikbaarheid DKDL";"DKDL informatie is beschikbaar. ";1;"Initiële vragen"
+"Q3";"Beschikbaarheid DKDL";"DKDL informatie is nog niet beschikbaar en de verwachting is dat dit op korte termijn (max. 4 weken) beschikbaar komt. ";2;"Initiële vragen"
+"Q3";"Beschikbaarheid DKDL";"DKDL informatie is niet beschikbaar";3;"Initiële vragen"
+"Q4";"Psychisch functioneren en gedrag";"De cliënt heeft geen psychische- of gedragsproblemen waarvan de cliënt zelf of zijn/haar omgeving problemen ondervindt in het dagelijks leven.";1;"Draagkracht"
+"Q4";"Psychisch functioneren en gedrag";"De cliënt heeft één of meerdere lichte psychische- en/of gedragsproblemen waarvan de cliënt zelf of zijn/haar omgeving problemen ondervindt in het dagelijks leven (bijv. voorstadium van dementie, somberheid, zorgen maken, onrustig zijn). ";2;"Draagkracht"
+"Q4";"Psychisch functioneren en gedrag";"De cliënt heeft één of meerdere zware psychische- en/of gedragsproblemen waarvan de cliënt zelf of zijn/haar omgeving problemen ondervindt in het dagelijks leven (bijv. psychiatrische stoornis, zware depressie, dementie met gedragsproblematiek, zware verslaving, zorgmijding). ";3;"Draagkracht"
+"Q5";"Geheugen";"De cliënt heeft geen geheugenproblemen. ";1;"Draagkracht"
+"Q5";"Geheugen";"De cliënt heeft soms geheugenproblemen (bijv. af en toe vergeetachtig ten gevolge van het ouder worden). ";2;"Draagkracht"
+"Q5";"Geheugen";"De cliënt heeft vaak/altijd geheugenproblemen. ";3;"Draagkracht"
+"Q6";"Sociaal netwerk";"De cliënt heeft betekenisvolle sociale contacten. ";1;"Draagkracht"
+"Q6";"Sociaal netwerk";"De cliënt heeft weinig betekenisvolle sociale contacten. ";2;"Draagkracht"
+"Q6";"Sociaal netwerk";"De cliënt heeft geen betekenisvolle sociale contacten. ";3;"Draagkracht"
+"Q7";"Mantelzorg";"De cliënt ontvangt mantelzorg. ";1;"Draaglast"
+"Q7";"Mantelzorg";"De cliënt ontvangt geen mantelzorg. ";2;"Draaglast"
+"Q8";"Verwachte verloop ";"De toestand en/of zelfstandigheid van de cliënt zal naar verwachting verbeteren de komende maand. ";1;"Draaglast"
+"Q8";"Verwachte verloop ";"De toestand en/of zelfstandigheid van de cliënt blijft naar verwachting (relatief) stabiel de komende maand. ";2;"Draaglast"
+"Q8";"Verwachte verloop ";"De toestand en/of zelfstandigheid van de cliënt zal naar verwachting verslechteren de komende maand. ";3;"Draaglast"
+"Q9";"Continentie";"De cliënt is volledig continent, zowel voor urine als voor ontlasting. ";1;"Ondersteuningsbehoefte"
+"Q9";"Continentie";"De cliënt is incontinent voor urine. ";2;"Ondersteuningsbehoefte"
+"Q9";"Continentie";"De cliënt is incontinent voor ontlasting. ";3;"Ondersteuningsbehoefte"
+"Q9";"Continentie";"De cliënt is incontinent voor urine én ontlasting. ";4;"Ondersteuningsbehoefte"
+"Q10";"Wassen/douchen";"De cliënt wast/doucht zich zelfstandig. ";1;"Ondersteuningsbehoefte"
+"Q10";"Wassen/douchen";"De cliënt heeft gedeeltelijke hulp van derden nodig (bijv. aansporing, toezicht of fysieke ondersteuning) om zich te wassen/douchen. ";2;"Ondersteuningsbehoefte"
+"Q10";"Wassen/douchen";"De cliënt moet volledig geholpen worden door derden om zich te wassen/douchen.";3;"Ondersteuningsbehoefte"
+"Q11";"Medicatiegebruik (Het bestellen van medicatie valt hier niet onder.)";"De cliënt heeft geen medicatie of neemt zijn/haar medicatie zelfstandig in. ";1;"Ondersteuningsbehoefte"
+"Q11";"Medicatiegebruik (Het bestellen van medicatie valt hier niet onder.)";"De cliënt heeft gedeeltelijke hulp van derden nodig (bijv. medicatie aanreiken of klaarzetten, medicatie deels toedienen, aansporing of toezicht) bij het nemen van (een deel van de) medicatie. ";2;"Ondersteuningsbehoefte"
+"Q11";"Medicatiegebruik (Het bestellen van medicatie valt hier niet onder.)";"Het toedienen van alle medicatie moet volledig worden overgenomen door derden. ";3;"Ondersteuningsbehoefte"
+"Q12";"Verpleegtechnische zorgvraag";"De cliënt heeft geen verpleegtechnische zorgvraag. ";1;"Verpleegtechnische zorgvraag"
+"Q12";"Verpleegtechnische zorgvraag";"Zwachtelen (bijv. compressief zwachtelen) ";2;"Verpleegtechnische zorgvraag"
+"Q12";"Verpleegtechnische zorgvraag";"Complexe wond(en) (na circa 3 weken nog geen wondsluiting plaatsgevonden/verwacht) ";3;"Verpleegtechnische zorgvraag"
+"Q12";"Verpleegtechnische zorgvraag";"Sonde (bijv. sondevoeding toedienen) ";4;"Verpleegtechnische zorgvraag"
+"Q12";"Verpleegtechnische zorgvraag";"Eenmalige- of verblijfskatheter (bijv. blaaskatheterisatie uitvoeren, blaasspoeling) ";5;"Verpleegtechnische zorgvraag"
+"Q12";"Verpleegtechnische zorgvraag";"Overige blaas- en nierkatheterisatie (bijv. suprapubische katheterisatie, nefrostoma) ";6;"Verpleegtechnische zorgvraag"
+"Q12";"Verpleegtechnische zorgvraag";"Darmstoma (bijv. stomamateriaal verwisselen)";7;"Verpleegtechnische zorgvraag"
+"Q12";"Verpleegtechnische zorgvraag";"Darmspoeling (bijv. structureel klysma toedienen, darmspoeling) ";8;"Verpleegtechnische zorgvraag"
+"Q12";"Verpleegtechnische zorgvraag";"Injecties (bijv. subcutaan of intramusculair injecteren)";9;"Verpleegtechnische zorgvraag"
