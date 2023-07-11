@@ -1,5 +1,10 @@
 library(shiny)
 
+# TODO
+
+# verpleegtechnische zorgvraag
+# iets met de IVs 
+
 source("ui.R")
 source("server.R")
 
