@@ -14,7 +14,7 @@ casemix_vragen <- function(filename = NA){
   i <- 0
   for(question in nameList){
     i <- i + 1
-    print(question)
+    #print(question)
     if(!exists("choiceNames")){
     choiceNames <- list(casemix_vragenlijst %>% 
       filter(QuestionId == question) %>% 
@@ -33,7 +33,7 @@ casemix_vragen <- function(filename = NA){
                                                 filter(QuestionId == question) %>% 
                                                 pull(ChoiceValue)))
     }
-    print(choiceValues[[i]])
+    #print(choiceValues[[i]])
   }
  
   all_radios <- list()
