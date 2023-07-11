@@ -1,6 +1,6 @@
 library(shinyjs)
 
-ui <- tagList(
+ui <- tagList( # HTML tag list
   useShinyjs(),
   navbarPage(
     title = "Draagkracht Draaglast tool",
@@ -8,7 +8,6 @@ ui <- tagList(
     tabPanel(
       title = "Case-mix vragenlijst",
       value = "formulier",
-      h1("DKDL vragen"),
       uiOutput("myradios"),
       actionButton('jumpToP2', 'Leid cliëntprofiel af')
     ),
