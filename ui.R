@@ -6,6 +6,8 @@ ui <- navbarPage(
     title = "Initiële vragen",
     value = "initieel",
     p("Op basis van de intiële vragen wordt bepaald of het draagkracht draaglast model van toepassing is."),
+    p("Op de ", a(href = "https://www.nza.nl/onderwerpen/jaarverslag/nieuws/2023/07/03/client-staat-centraal-in-nieuwe-vorm-van-bekostiging-wijkverpleging", 
+                 "website van de NZa", .noWS = "outside"), " vindt u meer informatie over dit model."),
     hr(),
     uiOutput("radios_initieel"),
     htmlOutput("cp_initieel_txt"),
@@ -27,11 +29,14 @@ ui <- navbarPage(
   ), 
   # Bootstrap CSS 
   header = tags$style(HTML(" 
+        #cp_initieel_txt {font-size:20px;
+               color:red;
+               display:block; }
         .navbar-default .navbar-brand {color: black;}
         .navbar-default .navbar-brand:hover {color: black;}
         .navbar { background-color: white;}
         .navbar-default .navbar-nav > li > a {color:black;} 
         .navbar-default .navbar-nav > .active > a,
         .navbar-default .navbar-nav > .active > a:focus {color: white; background-color: #5cb85c},
-                  "))
-)
+                  ")
+))
