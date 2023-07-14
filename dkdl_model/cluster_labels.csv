@@ -70,17 +70,17 @@ row_id;cluster_id;hoofd_categorie;subgroep;cluster_sort_nr;model_nr;model_naam;c
 70;12;Profiel 6;n.v.t.;6;6;Datagedreven model;nvt;1
 71;14;Profiel 7;n.v.t.;7;6;Datagedreven model;nvt;1
 72;15;Profiel 8;n.v.t.;8;6;Datagedreven model;nvt;1
-31;18;Draagkrachtig, geen verhoogde draaglast;OB laag;3;7;Draagkracht/draaglast model variant3;DKDL;1
-32;19;Draagkrachtig, geen verhoogde draaglast;OB midden;4;7;Draagkracht/draaglast model variant3;DKDL;1
-33;20;Draagkrachtig, geen verhoogde draaglast;OB hoog;5;7;Draagkracht/draaglast model variant3;DKDL;1
-34;23;Draagkrachtig, verhoogde draaglast;OB laag;6;7;Draagkracht/draaglast model variant3;DKDL;3
-35;24;Draagkrachtig, verhoogde draaglast;OB midden;7;7;Draagkracht/draaglast model variant3;DKDL;3
-36;25;Draagkrachtig, verhoogde draaglast;OB hoog;8;7;Draagkracht/draaglast model variant3;DKDL;3
-37;7;Verminderd draagkrachtig, geen verhoogde draaglast;OB laag;9;7;Draagkracht/draaglast model variant3;DKDL;2
-38;8;Verminderd draagkrachtig, geen verhoogde draaglast;OB midden;10;7;Draagkracht/draaglast model variant3;DKDL;2
-39;9;Verminderd draagkrachtig, geen verhoogde draaglast;OB hoog;11;7;Draagkracht/draaglast model variant3;DKDL;2
-40;12;Verminderd draagkrachtig, verhoogde draaglast;OB laag;12;7;Draagkracht/draaglast model variant3;DKDL;4
-41;13;Verminderd draagkrachtig, verhoogde draaglast;OB midden;13;7;Draagkracht/draaglast model variant3;DKDL;4
-42;14;Verminderd draagkrachtig, verhoogde draaglast;OB hoog;14;7;Draagkracht/draaglast model variant3;DKDL;4
+31;18;Draagkrachtig, geen verhoogde draaglast;lage ondersteuningsbehoefte;3;7;Draagkracht/draaglast model variant3;DKDL;1
+32;19;Draagkrachtig, geen verhoogde draaglast;gemiddelde ondersteuningsbehoefte;4;7;Draagkracht/draaglast model variant3;DKDL;1
+33;20;Draagkrachtig, geen verhoogde draaglast;hoge ondersteuningsbehoefte;5;7;Draagkracht/draaglast model variant3;DKDL;1
+34;23;Draagkrachtig, verhoogde draaglast;lage ondersteuningsbehoefte;6;7;Draagkracht/draaglast model variant3;DKDL;3
+35;24;Draagkrachtig, verhoogde draaglast;gemiddelde ondersteuningsbehoeft;7;7;Draagkracht/draaglast model variant3;DKDL;3
+36;25;Draagkrachtig, verhoogde draaglast;hoge ondersteuningsbehoefte;8;7;Draagkracht/draaglast model variant3;DKDL;3
+37;7;Verminderd draagkrachtig, geen verhoogde draaglast;lage ondersteuningsbehoefte;9;7;Draagkracht/draaglast model variant3;DKDL;2
+38;8;Verminderd draagkrachtig, geen verhoogde draaglast;gemiddelde ondersteuningsbehoefte;10;7;Draagkracht/draaglast model variant3;DKDL;2
+39;9;Verminderd draagkrachtig, geen verhoogde draaglast;hoge ondersteuningsbehoefteg;11;7;Draagkracht/draaglast model variant3;DKDL;2
+40;12;Verminderd draagkrachtig, verhoogde draaglast;lage ondersteuningsbehoefte;12;7;Draagkracht/draaglast model variant3;DKDL;4
+41;13;Verminderd draagkrachtig, verhoogde draaglast;gemiddelde ondersteuningsbehoefte;13;7;Draagkracht/draaglast model variant3;DKDL;4
+42;14;Verminderd draagkrachtig, verhoogde draaglast;hoge ondersteuningsbehoefte;14;7;Draagkracht/draaglast model variant3;DKDL;4
 43;26;Hoogcomplexe technische thuiszorg (infuusbeh.);n.v.t.;2;7;Draagkracht/draaglast model variant3;overig;5
 44;27;Palliatief terminale  zorgvraag;n.v.t.;1;7;Draagkracht/draaglast model variant3;overig;6
