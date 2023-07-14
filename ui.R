@@ -1,4 +1,5 @@
 ui <- navbarPage(
+  shinyjs::useShinyjs(),
   title = "Draagkracht Draaglast tool",
   id = "navbar",
   tabPanel(
@@ -7,7 +8,8 @@ ui <- navbarPage(
     p("Op basis van de intiële vragen wordt bepaald of het draagkracht draaglast model van toepassing is."),
     hr(),
     uiOutput("radios_initieel"),
-    actionButton('jumpToP2', 'Volgende stap', class = "btn-lg btn-success"),
+    htmlOutput("cp_initieel_txt"),
+    actionButton('jumpToP2', 'ga naar DKDL', class = "btn-lg btn-success"),
     p("")
   ),
   tabPanel(
