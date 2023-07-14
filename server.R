@@ -1,11 +1,12 @@
 server <- function(input, output, session) {
   observe({
     shinyjs::hide("jumpToP2")
+    shinyjs::hide("Q13")
     
     if(!is.null(input$Q1) | 
        (!is.null(input$Q1) & !is.null(input$Q2)) | 
        (!is.null(input$Q1) & !is.null(input$Q2) & !is.null(input$Q3))) {
-      output$cp_initieel_txt <- renderText({paste("<br> <br><h1> ", determine_cp(input), "</h1> <br>")})
+      output$cp_initieel_txt <- renderText({paste("<h1> ", determine_cp(input), "</h1> <br>")})
     }
     if((!is.null(input$Q1) & !is.null(input$Q2) & !is.null(input$Q3))){
       if((as.integer(input$Q1) + as.integer(input$Q2) + as.integer(input$Q3)) == 3){
@@ -68,6 +69,17 @@ server <- function(input, output, session) {
                     title = "Ondersteuningsbehoefte",
                     value = "ondersteuningsbehoefte",
                     uiOutput("radios_ob"),
+                    checkboxInput("Q12", "De cliënt heeft een verpleegtechnische zorgvraag", FALSE),
+                    checkboxGroupInput("Q13", "Verpleegtechnische zorgvraag",
+                                       c("Zwachtelen (bijv. compressief zwachtelen)" = "VR_technisch_zwachtelen",
+                                         "Complexe wond(en) (na circa 3 weken nog geen wondsluiting plaatsgevonden/verwacht)" = "VR_technisch_complexewonden",
+                                         "Sonde (bijv. sondevoeding toedienen)" = "VR_technisch_sonde",
+                                         "Eenmalige- of verblijfskatheter (bijv. blaaskatheterisatie uitvoeren, blaasspoeling)" = "VR_technisch_eenmaligeofverblijfskatheter",
+                                         "Overige blaas- en nierkatheterisatie (bijv. suprapubische katheterisatie, nefrostoma)" = "VR_technisch_overigeblaasennierkatheterisatie",
+                                         "Darmstoma (bijv. stomamateriaal verwisselen)" = "VR_technisch_darmstoma",
+                                         "Darmspoeling (bijv. structureel klysma toedienen, darmspoeling)" = "VR_technisch_darmspoeling",
+                                         "Injecties (bijv. subcutaan of intramusculair injecteren)" = "VR_technisch_injecties"
+                                       )),
                     actionButton('jumpToP5', 'Ga naar Cliëntprofiel', class = "btn-lg btn-success"),
                     p("")
                   ),
@@ -90,8 +102,7 @@ server <- function(input, output, session) {
                       selected = "clientprofiel")
   })
   observeEvent(input$jumpToP1, {
-    updateTabsetPanel(session, "navbar",
-                      selected = "initieel")
+    session$reload()
   })
   
 }

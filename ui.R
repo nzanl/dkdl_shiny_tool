@@ -10,6 +10,8 @@ ui <- navbarPage(
                  "website van de NZa", .noWS = "outside"), " vindt u meer informatie over dit model."),
     hr(),
     uiOutput("radios_initieel"),
+    hr(),
+    p("Op basis van de gekozen antwoorden valt de cliënt in profiel:"),
     htmlOutput("cp_initieel_txt"),
     actionButton('jumpToP2', 'ga naar DKDL', class = "btn-lg btn-success"),
     p("")
@@ -18,7 +20,7 @@ ui <- navbarPage(
     title = "Cliëntprofiel",
     value = "clientprofiel",
     htmlOutput("cm_txt_output"),
-    actionButton('jumpToP1', 'Ga terug naar de vragenlijst')
+    actionButton('jumpToP1', 'Klik hier om opnieuw te beginnen')
   ),
   tabPanel(
     title = "Toelichting bij het DKDL model",

@@ -26,10 +26,11 @@ determine_cp <- function(input){
 
   if(!(!is.null(input$Q4) & !is.null(input$Q5) & !is.null(input$Q6) & 
      !is.null(input$Q7) & !is.null(input$Q8) &
-     !is.null(input$Q9) & !is.null(input$Q10) & !is.null(input$Q11))) return("Nog niet alle DKDL vragen beantwoord")
+     !is.null(input$Q9) & !is.null(input$Q10) & !is.null(input$Q11) & !is.null(input$Q12))) return("Nog niet alle DKDL vragen beantwoord")
 
   # construct a df record with required colnames
   # PM deduce levels from casemix csv
+  print(input$Q12$VR_technisch_complexewonden)
   df <- data.frame(VR_technisch_infuusbehandeling = 0,
                    VR_psychisch = factor(as.integer(input$Q4), levels = 1:3),
                    VR_geheugen = factor(as.integer(input$Q5), levels = 1:3),

@@ -2,8 +2,7 @@ library(shiny)
 
 # TODO
 
-# verpleegtechnische zorgvraag
-# knop reset vragenlijst
+# verpleegtechnische zorgvraag verbergen
 # knoppen om terug te gaan
 
 source("ui.R")
@@ -15,5 +14,3 @@ shinyApp(ui = ui, server = server)
 # two file app, this file is only for testing locally
 #rsconnect::deployApp('~/Werk/Github/gsverhoeven/dkdl_shiny_tool')
 
-# shinyjs for toggle hide/show
-# conditionalPanel
