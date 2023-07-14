@@ -3,6 +3,8 @@ library(shiny)
 # TODO
 
 # verpleegtechnische zorgvraag
+# knop reset vragenlijst
+# knoppen om terug te gaan
 
 source("ui.R")
 source("server.R")
