@@ -18,17 +18,18 @@ generate_test_input <- function(){
 }
 
 determine_cp <- function(input){
-  # input contains all casemix items
-  # Initiele vragen:
-  # if(input$Q1 == 2) return("Medische kindzorg thuis")
-  # if(input$Q2 == 2) return("Palliatief-terminale zorgvraag < 3 maanden")
-  # if(input$Q3 == 2) return("Tijdelijk DKDL profiel")
-  # if(input$Q3 == 3) return("Geen DKDL beschikbaar")
-  
+  # check initiele vragen
+  if(input$Q1 == "2") return("Medische kindzorg thuis")
+  if(input$Q2 == "2") return("Palliatief-terminale zorgvraag < 3 maanden")
+  if(input$Q3 == "2") return("Tijdelijk DKDL profiel")
+  if(input$Q3 == "3") return("Geen DKDL beschikbaar")
+
+  req(input$Q4,input$Q5,input$Q6,
+      input$Q7,input$Q8,
+      input$Q9, input$Q10,input$Q11)
+
   # construct a df record with required colnames
   # PM deduce levels from casemix csv
-  # Add check for all inputs to be filled in
-  #print(as.integer(input$Q2) - 1)
   df <- data.frame(VR_technisch_infuusbehandeling = 0,
                    VR_psychisch = factor(as.integer(input$Q4), levels = 1:3),
                    VR_geheugen = factor(as.integer(input$Q5), levels = 1:3),
