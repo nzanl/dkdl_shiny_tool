@@ -24,9 +24,9 @@ determine_cp <- function(input){
   if(input$Q3 == "2") return("Tijdelijk DKDL profiel")
   if(input$Q3 == "3") return("Geen DKDL beschikbaar")
 
-  req(input$Q4,input$Q5,input$Q6,
-      input$Q7,input$Q8,
-      input$Q9, input$Q10,input$Q11)
+  if(!(!is.null(input$Q4) & !is.null(input$Q5) & !is.null(input$Q6) & 
+     !is.null(input$Q7) & !is.null(input$Q8) &
+     !is.null(input$Q9) & !is.null(input$Q10) & !is.null(input$Q11))) return("Nog niet alle DKDL vragen beantwoord")
 
   # construct a df record with required colnames
   # PM deduce levels from casemix csv
