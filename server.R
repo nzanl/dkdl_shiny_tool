@@ -1,6 +1,23 @@
 server <- function(input, output, session) {
+  observe({
+    shinyjs::hide("jumpToP2")
+    
+    if(!is.null(input$Q1) | 
+       (!is.null(input$Q1) & !is.null(input$Q2)) | 
+       (!is.null(input$Q1) & !is.null(input$Q2) & !is.null(input$Q3))) {
+      output$cp_initieel_txt <- renderText({paste("<br> <br><h1> ", determine_cp(input), "</h1> <br>")})
+    }
+    if((!is.null(input$Q1) & !is.null(input$Q2) & !is.null(input$Q3))){
+      if((as.integer(input$Q1) + as.integer(input$Q2) + as.integer(input$Q3)) == 3){
+        shinyjs::show("jumpToP2")
+      }
+    }
+  })
+  
   source("determine_cp.R", local = TRUE)
   source("generate_radio_buttons.R", local = TRUE)
+  
+  output$cp_initieel_txt <- renderText({paste("Nog geen initieel profiel")})
   
   radios_initieel <- generate_radio_buttons(filename = "casemix_vragenlijst_full.csv", 
                                     subset = "Initiële vragen")
@@ -28,8 +45,6 @@ server <- function(input, output, session) {
   })
 
   observeEvent(input$jumpToP2, {
-    if(req(input$Q1)){
-      if (input$Q1 == "1") {
         insertTab(inputId = "navbar", 
                   tab = tabPanel(
                     title = "Draagkracht",
@@ -57,23 +72,9 @@ server <- function(input, output, session) {
                     p("")
                   ),
                   target = "draaglast")           
-      }
-      if(input$Q1 == "2" | is.null(input$Q1)) {
-        removeTab(inputId = "navbar", target = "draagkracht")
-        removeTab(inputId = "navbar", target = "draaglast")
-        removeTab(inputId = "navbar", target = "ondersteuningsbehoefte")
-      }
-    }
-    print(input$draagkracht)
-    if(!is.null(input$draagkracht)){
-      
+
     updateTabsetPanel(session, "navbar",
                       selected = "draagkracht")
-    } else{
-      updateTabsetPanel(session, "navbar",
-                        selected = "clientprofiel")
-    }
-    print(input$draagkracht)
   })
   
   observeEvent(input$jumpToP3, {
