@@ -1,7 +1,7 @@
 server <- function(input, output, session) {
   observe({
     shinyjs::hide("jumpToP2")
-    shinyjs::hide("Q13")
+    
     
     if(!is.null(input$Q1) | 
        (!is.null(input$Q1) & !is.null(input$Q2)) | 
@@ -14,6 +14,8 @@ server <- function(input, output, session) {
       }
     }
   })
+  observeEvent(input$Q12, {shinyjs::toggle("Q13")
+    })
   
   source("determine_cp.R", local = TRUE)
   source("generate_radio_buttons.R", local = TRUE)
@@ -69,8 +71,9 @@ server <- function(input, output, session) {
                     title = "Ondersteuningsbehoefte",
                     value = "ondersteuningsbehoefte",
                     uiOutput("radios_ob"),
+                    strong("Verpleegtechnische zorgvraag"),
                     checkboxInput("Q12", "De cliënt heeft een verpleegtechnische zorgvraag", FALSE),
-                    checkboxGroupInput("Q13", "Verpleegtechnische zorgvraag",
+                    checkboxGroupInput("Q13", label = NULL,
                                        c("Zwachtelen (bijv. compressief zwachtelen)" = "VR_technisch_zwachtelen",
                                          "Complexe wond(en) (na circa 3 weken nog geen wondsluiting plaatsgevonden/verwacht)" = "VR_technisch_complexewonden",
                                          "Sonde (bijv. sondevoeding toedienen)" = "VR_technisch_sonde",
