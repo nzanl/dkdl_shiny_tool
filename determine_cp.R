@@ -56,7 +56,7 @@ determine_cp <- function(input){
                    VR_technisch_zwachtelen = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_zwachtelen" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
                    y = 1,
                    cm_VragenlijstID = 1)
-  print(df)
+
   # then apply DK DL OB transform
   df_tf <- dkdl_transformations(df)
   print(df_tf)
