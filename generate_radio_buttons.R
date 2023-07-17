@@ -1,6 +1,6 @@
 library(tidyverse)
 
-casemix_vragen <- function(filename = NA, subset = NA){
+generate_radio_buttons <- function(filename = NA, subset = NA){
   if(exists("choiceNames")) rm(choiceNames)
   
   # inlezen casemix vragenlijst

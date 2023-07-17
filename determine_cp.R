@@ -18,18 +18,25 @@ generate_test_input <- function(){
 }
 
 determine_cp <- function(input){
-  # input contains all casemix items
-  # Initiele vragen:
-  # if(input$Q1 == 2) return("Medische kindzorg thuis")
-  # if(input$Q2 == 2) return("Palliatief-terminale zorgvraag < 3 maanden")
-  # if(input$Q3 == 2) return("Tijdelijk DKDL profiel")
-  # if(input$Q3 == 3) return("Geen DKDL beschikbaar")
+  # check initiele vragen
+  Q1 <- ifelse(is.null(input$Q1), "0", input$Q1)
+  Q2 <- ifelse(is.null(input$Q2), "0", input$Q2)
+  Q3 <- ifelse(is.null(input$Q3), "0", input$Q3)
   
-  # construct a df record with required colnames
-  # PM deduce levels from casemix csv
-  # Add check for all inputs to be filled in
-  #print(as.integer(input$Q2) - 1)
-  df <- data.frame(VR_technisch_infuusbehandeling = 0,
+  if(!(Q1 == "1" & Q2 == "1" & Q3 == "1")){
+    if(input$Q1 == "2") return("Medische kindzorg thuis") # voorliggend
+    else if(input$Q2 == "2") return("Palliatief-terminale zorgvraag < 3 maanden") # daarna PTZ
+    else if(input$Q3 == "2") return("Tijdelijk DKDL profiel") # daarna DKDL uitzonderingen
+    else if(input$Q3 == "3") return("Geen DKDL beschikbaar")
+    else {return("Nog niet alle initiele vragen beantwoord")}
+  }
+  # we zijn er nog: dus door naar de DKDL
+  if(!(!is.null(input$Q4) & !is.null(input$Q5) & !is.null(input$Q6) & 
+     !is.null(input$Q7) & !is.null(input$Q8) &
+     !is.null(input$Q9) & !is.null(input$Q10) & !is.null(input$Q11) & !is.null(input$Q12))) return("Nog niet alle DKDL vragen beantwoord")
+
+  # construct a df data.frame with required colnames for data processing and model prediction
+  df <- data.frame(VR_technisch_infuusbehandeling = 0, # is prestatie hoogcomplexe TT geworden
                    VR_psychisch = factor(as.integer(input$Q4), levels = 1:3),
                    VR_geheugen = factor(as.integer(input$Q5), levels = 1:3),
                    VR_sociaal = factor(as.integer(input$Q6), levels = 1:3),
@@ -39,19 +46,20 @@ determine_cp <- function(input){
                    VR_continentie = factor(as.integer(input$Q9), levels = 1:4),
                    VR_wassen = factor(as.integer(input$Q10), levels = 1:3),
                    VR_medicatie = factor(as.integer(input$Q11), levels = 1:3),
-                   VR_technisch_complexewonden = 0,
-                   VR_technisch_darmspoeling = 0,
-                   VR_technisch_eenmaligeofverblijfskatheter = 0,
-                   VR_technisch_darmstoma = 0,
-                   VR_technisch_injecties = 0,
-                   VR_technisch_overigeblaasennierkatheterisatie = 0,
-                   VR_technisch_sonde = 0,
-                   VR_technisch_zwachtelen = 0,
+                   VR_technisch_complexewonden = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_complexewonden" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_darmspoeling = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_darmspoeling" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_eenmaligeofverblijfskatheter = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_eenmaligeofverblijfskatheter" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_darmstoma = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_darmstoma" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_injecties = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_injecties" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_overigeblaasennierkatheterisatie = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_overigeblaasennierkatheterisatie" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_sonde = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_sonde" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_zwachtelen = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_zwachtelen" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
                    y = 1,
                    cm_VragenlijstID = 1)
-  #print(df)
+  print(df)
   # then apply DK DL OB transform
   df_tf <- dkdl_transformations(df)
+  print(df_tf)
   # then create party object
   treemodel <- combine_data_with_tree(df_tf)
   # then predict node
