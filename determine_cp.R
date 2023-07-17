@@ -20,9 +20,11 @@ generate_test_input <- function(){
 determine_cp <- function(input){
   # check initiele vragen
   if(input$Q1 == "2") return("Medische kindzorg thuis")
-  if(input$Q2 == "2") return("Palliatief-terminale zorgvraag < 3 maanden")
-  if(input$Q3 == "2") return("Tijdelijk DKDL profiel")
-  if(input$Q3 == "3") return("Geen DKDL beschikbaar")
+  else if(input$Q2 == "2" & !is.null(input$Q1)) return("Palliatief-terminale zorgvraag < 3 maanden")
+  else if(input$Q3 == "2" & !is.null(input$Q1) & !is.null(input$Q2)) return("Tijdelijk DKDL profiel")
+  else if(input$Q3 == "3" & !is.null(input$Q1) & !is.null(input$Q2)) return("Geen DKDL beschikbaar")
+  else if(!is.null(input$Q1) & !is.null(input$Q2) & !is.null(input$Q3) ) {}# do nothing
+  else return("Nog niet alle initiele vragen beantwoord")
 
   if(!(!is.null(input$Q4) & !is.null(input$Q5) & !is.null(input$Q6) & 
      !is.null(input$Q7) & !is.null(input$Q8) &
