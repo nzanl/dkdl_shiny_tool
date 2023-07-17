@@ -1,9 +1,7 @@
 library(shiny)
 
 # TODO
-
-# verpleegtechnische zorgvraag verbergen
-# knoppen om terug te gaan
+# knoppen om terug te gaan naar vorig tabblad
 
 source("ui.R")
 source("server.R")

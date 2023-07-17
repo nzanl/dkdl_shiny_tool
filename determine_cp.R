@@ -32,8 +32,9 @@ determine_cp <- function(input){
 
   # construct a df record with required colnames
   # PM deduce levels from casemix csv
-  print(input$Q12$VR_technisch_complexewonden)
-  df <- data.frame(VR_technisch_infuusbehandeling = 0,
+  print(input$Q12)
+  print(input$Q13)
+  df <- data.frame(VR_technisch_infuusbehandeling = 0, # is prestatie hoogcomplexe TT geworden
                    VR_psychisch = factor(as.integer(input$Q4), levels = 1:3),
                    VR_geheugen = factor(as.integer(input$Q5), levels = 1:3),
                    VR_sociaal = factor(as.integer(input$Q6), levels = 1:3),
@@ -43,19 +44,20 @@ determine_cp <- function(input){
                    VR_continentie = factor(as.integer(input$Q9), levels = 1:4),
                    VR_wassen = factor(as.integer(input$Q10), levels = 1:3),
                    VR_medicatie = factor(as.integer(input$Q11), levels = 1:3),
-                   VR_technisch_complexewonden = 0,
-                   VR_technisch_darmspoeling = 0,
-                   VR_technisch_eenmaligeofverblijfskatheter = 0,
-                   VR_technisch_darmstoma = 0,
-                   VR_technisch_injecties = 0,
-                   VR_technisch_overigeblaasennierkatheterisatie = 0,
-                   VR_technisch_sonde = 0,
-                   VR_technisch_zwachtelen = 0,
+                   VR_technisch_complexewonden = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_complexewonden" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_darmspoeling = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_darmspoeling" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_eenmaligeofverblijfskatheter = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_eenmaligeofverblijfskatheter" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_darmstoma = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_darmstoma" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_injecties = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_injecties" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_overigeblaasennierkatheterisatie = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_overigeblaasennierkatheterisatie" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_sonde = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_sonde" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_zwachtelen = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_zwachtelen" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
                    y = 1,
                    cm_VragenlijstID = 1)
-  #print(df)
+  print(df)
   # then apply DK DL OB transform
   df_tf <- dkdl_transformations(df)
+  print(df_tf)
   # then create party object
   treemodel <- combine_data_with_tree(df_tf)
   # then predict node
