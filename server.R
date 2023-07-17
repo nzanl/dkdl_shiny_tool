@@ -23,17 +23,17 @@ server <- function(input, output, session) {
   radios_initieel <- generate_radio_buttons(filename = "casemix_vragenlijst_full.csv", 
                                     subset = "Initiële vragen")
   
-  output$radios_initieel <- renderUI(radios_initieel) # Renders reactive HTML using the Shiny UI library.
+  output$radios_initieel <- renderUI(radios_initieel)
 
   radios_draagkracht <- generate_radio_buttons(filename = "casemix_vragenlijst_full.csv", 
                                     subset = "Draagkracht")
   
-  output$radios_draagkracht <- renderUI(radios_draagkracht) # Renders reactive HTML using the Shiny UI library.  
+  output$radios_draagkracht <- renderUI(radios_draagkracht) 
 
   radios_draaglast <- generate_radio_buttons(filename = "casemix_vragenlijst_full.csv", 
                                     subset = "Draaglast")
   
-  output$radios_draaglast <- renderUI(radios_draaglast) # Renders reactive HTML using the Shiny UI library.
+  output$radios_draaglast <- renderUI(radios_draaglast) 
   
   radios_ob <- generate_radio_buttons(filename = "casemix_vragenlijst_full.csv", 
                                     subset = "Ondersteuningsbehoefte")
