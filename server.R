@@ -2,7 +2,6 @@ server <- function(input, output, session) {
   observe({
     shinyjs::hide("jumpToP2")
     
-    
     if(!is.null(input$Q1) | 
        (!is.null(input$Q1) & !is.null(input$Q2)) | 
        (!is.null(input$Q1) & !is.null(input$Q2) & !is.null(input$Q3))) {
@@ -14,13 +13,15 @@ server <- function(input, output, session) {
       }
     }
   })
-  observeEvent(input$Q12, {shinyjs::toggle("Q13")
+  observeEvent(input$Q12, 
+               {Q12 <- ifelse(is.null(input$Q12), "0", input$Q12); 
+               if (Q12 == "2"){ shinyjs::show("Q13")} else shinyjs::hide("Q13")
     })
   
   source("determine_cp.R", local = TRUE)
   source("generate_radio_buttons.R", local = TRUE)
   
-  output$cp_initieel_txt <- renderText({paste("Nog geen initieel profiel")})
+  output$cp_initieel_txt <- renderText({paste("Nog niet genoeg informatie om een profiel af te leiden.")})
   
   radios_initieel <- generate_radio_buttons(filename = "casemix_vragenlijst_full.csv", 
                                     subset = "Initiële vragen")
@@ -44,7 +45,7 @@ server <- function(input, output, session) {
   
   output$cm_txt_output <- renderText({
     shiny::req(input$Q1, input$Q2, input$Q3)
-    paste("De gekozen antwoordopties leiden af naar cliëntprofiel: <br> <br> <Br> <h1> <b>", determine_cp(input), "</b> </h1")
+    paste("De gekozen antwoordopties leiden af naar cliëntprofiel: <br> <h1> <b>", determine_cp(input), "</b> </h1><hr>")
   })
 
   observeEvent(input$jumpToP2, {
@@ -71,8 +72,6 @@ server <- function(input, output, session) {
                     title = "Ondersteuningsbehoefte",
                     value = "ondersteuningsbehoefte",
                     uiOutput("radios_ob"),
-                    strong("Verpleegtechnische zorgvraag"),
-                    checkboxInput("Q12", "De cliënt heeft een verpleegtechnische zorgvraag", FALSE),
                     checkboxGroupInput("Q13", label = NULL,
                                        c("Zwachtelen (bijv. compressief zwachtelen)" = "VR_technisch_zwachtelen",
                                          "Complexe wond(en) (na circa 3 weken nog geen wondsluiting plaatsgevonden/verwacht)" = "VR_technisch_complexewonden",
