@@ -48,7 +48,7 @@ server <- function(input, output, session) {
     paste("De gekozen antwoordopties leiden af naar cliëntprofiel: <br> <h1> <b>", determine_cp(input), "</b> </h1><hr>")
   })
 
-  observeEvent(input$jumpToP2, {
+  observeEvent(input$jumpToP2, {if(is.null(input$jumpToP3)){
         insertTab(inputId = "navbar", 
                   tab = tabPanel(
                     title = "Draagkracht",
@@ -89,7 +89,8 @@ server <- function(input, output, session) {
 
     updateTabsetPanel(session, "navbar",
                       selected = "draagkracht")
-  })
+  } else {updateTabsetPanel(session, "navbar",
+                            selected = "draagkracht")}})
   
   observeEvent(input$jumpToP3, {
     updateTabsetPanel(session, "navbar",
