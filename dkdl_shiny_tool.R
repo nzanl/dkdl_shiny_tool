@@ -2,7 +2,6 @@ library(shiny)
 
 # TODO
 # checkbox group pas tonen na klikken vth
-# meerdere keren "ga naar DKDL" voegt meerdere tabs toe
 # knoppen om terug te gaan naar vorig tabblad
 # toelichting pop ups
 
