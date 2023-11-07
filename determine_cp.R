@@ -28,7 +28,7 @@ determine_cp <- function(input){
     else if(Q2 == "2") return("Palliatief-terminale zorgvraag < 3 maanden") # daarna PTZ
     else if(Q3 == "2") return("Tijdelijk DKDL profiel") # daarna DKDL uitzonderingen
     else if(Q3 == "3") return("Geen DKDL beschikbaar")
-    else {return("Nog niet alle initiele vragen beantwoord")}
+    else {return("Nog niet genoeg informatie om een profiel af te leiden.")}
   }
   # we zijn er nog: dus door naar de DKDL
   if(!(!is.null(input$Q4) & !is.null(input$Q5) & !is.null(input$Q6) &
@@ -46,14 +46,14 @@ determine_cp <- function(input){
                    VR_continentie = factor(as.integer(input$Q9), levels = 1:4),
                    VR_wassen = factor(as.integer(input$Q10), levels = 1:3),
                    VR_medicatie = factor(as.integer(input$Q11), levels = 1:3),
-                   VR_technisch_complexewonden = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_complexewonden" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
-                   VR_technisch_darmspoeling = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_darmspoeling" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
-                   VR_technisch_eenmaligeofverblijfskatheter = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_eenmaligeofverblijfskatheter" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
-                   VR_technisch_darmstoma = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_darmstoma" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
-                   VR_technisch_injecties = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_injecties" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
-                   VR_technisch_overigeblaasennierkatheterisatie = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_overigeblaasennierkatheterisatie" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
-                   VR_technisch_sonde = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_sonde" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
-                   VR_technisch_zwachtelen = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_zwachtelen" %in% input$Q13 & input$Q12 == TRUE, 1, 0)),
+                   VR_technisch_complexewonden = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_complexewonden" %in% input$Q13 & input$Q12 == "2", 1, 0)),
+                   VR_technisch_darmspoeling = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_darmspoeling" %in% input$Q13 & input$Q12 == "2", 1, 0)),
+                   VR_technisch_eenmaligeofverblijfskatheter = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_eenmaligeofverblijfskatheter" %in% input$Q13 & input$Q12 == "2", 1, 0)),
+                   VR_technisch_darmstoma = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_darmstoma" %in% input$Q13 & input$Q12 == "2", 1, 0)),
+                   VR_technisch_injecties = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_injecties" %in% input$Q13 & input$Q12 == "2", 1, 0)),
+                   VR_technisch_overigeblaasennierkatheterisatie = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_overigeblaasennierkatheterisatie" %in% input$Q13 & input$Q12 == "2", 1, 0)),
+                   VR_technisch_sonde = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_sonde" %in% input$Q13 & input$Q12 == "2", 1, 0)),
+                   VR_technisch_zwachtelen = ifelse(is.null(input$Q13), 0, ifelse("VR_technisch_zwachtelen" %in% input$Q13 & input$Q12 == "2", 1, 0)),
                    y = 1,
                    cm_VragenlijstID = 1)
 

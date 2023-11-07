@@ -1,7 +1,9 @@
 library(shiny)
 
 # TODO
+# checkbox group pas tonen na klikken vth
 # knoppen om terug te gaan naar vorig tabblad
+# toelichting pop ups
 
 source("ui.R")
 source("server.R")
