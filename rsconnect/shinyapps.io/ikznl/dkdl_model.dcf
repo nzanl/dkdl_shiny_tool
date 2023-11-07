@@ -1,0 +1,13 @@
+name: dkdl_model
+title: dkdl_model
+username: ikznl
+account: ikznl
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10443769
+bundleId: 7899131
+url: https://ikznl.shinyapps.io/dkdl_model/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: mockup DKL tool.pptx|Screenshots formulier.docx

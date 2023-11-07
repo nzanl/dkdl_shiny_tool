@@ -12,6 +12,8 @@ shinyApp(ui = ui, server = server)
 
 
 # two file app, this file is only for testing locally
-#rsconnect::deployApp('~/Werk/Github/gsverhoeven/dkdl_shiny_tool')
+#rsconnect::deployApp('~/Werk/Github/nzanl/dkdl_shiny_tool')
 # dep: shinyjs, partykit
+# install rsconnect
+# log in op shinyapps.io met werk login
 
