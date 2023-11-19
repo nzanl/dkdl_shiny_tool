@@ -20,9 +20,9 @@ install.packages(dependencies)
 Clone nu deze Github repository naar een lokale map.
 Open Rstudio en zorg dat deze lokale map de "current working directory" is.
 
-De app kan nu gerund worden met:
+De app kan nu gestart worden met:
 
 ```
-shiny::runApp("dkdl_shiny_tool.R")
+shiny::runApp()
 ```
 
