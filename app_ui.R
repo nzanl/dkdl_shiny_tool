@@ -41,7 +41,11 @@ p("Op basis van de initiële vragen wordt bepaald of het draagkracht draaglast m
     value = "toelichting", # The value that should be sent when tabsetPanel reports that this tab is selected.
     h1("Toelichting"),
     p("Het draagkracht draaglast model werkt via een case-mix vragenlijst."),
-    p("Na beantwoording van de vragenlijst wordt er automatisch een cliëntprofiel afgeleid.")
+    p("Na beantwoording van de vragenlijst wordt er automatisch een cliëntprofiel afgeleid."),
+    div(
+      id = "img-id2",
+      img(src = "model_schematisch.png", height = "50%", width = "50%")
+    )
   ),
   # Bootstrap CSS
   header = tags$style(HTML("
