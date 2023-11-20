@@ -15,7 +15,7 @@ ui <- navbarPage(
     value = "initieel",
     p("Deze tool is bedoeld om de werking van het Draagkracht Draaglast model te illustreren.", tags$br(),
       "Op de ", tags$u(a(href = "https://www.nza.nl/onderwerpen/jaarverslag/nieuws/2023/07/03/client-staat-centraal-in-nieuwe-vorm-van-bekostiging-wijkverpleging",
-                 "website van de NZa", .noWS = "outside")), " vindt u meer informatie over dit model.",
+                 "website van de NZa", .noWS = "outside", target = "_blank", rel = "noopener noreferrer")), " vindt u meer informatie over dit model.",
   tags$br(),
   br(),
       "De data die wordt ingevuld door de gebruiker wordt enkel gebruikt om een profiel af te leiden.",
