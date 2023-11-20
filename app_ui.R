@@ -13,7 +13,7 @@ ui <- navbarPage(
   tabPanel(
     title = "Initiële vragen",
     value = "initieel",
-    p("Op basis van de intiële vragen wordt bepaald of het draagkracht draaglast model van toepassing is."),
+    p("Op basis van de initiële vragen wordt bepaald of het draagkracht draaglast model van toepassing is."),
     p("Op de ", a(href = "https://www.nza.nl/onderwerpen/jaarverslag/nieuws/2023/07/03/client-staat-centraal-in-nieuwe-vorm-van-bekostiging-wijkverpleging",
                  "website van de NZa", .noWS = "outside"), " vindt u meer informatie over dit model."),
     hr(),
@@ -39,6 +39,7 @@ ui <- navbarPage(
   ),
   # Bootstrap CSS
   header = tags$style(HTML("
+        * { font-family: Arial; }
         #img-id { position: fixed;
           right: 20px;
           top: 0px;}
