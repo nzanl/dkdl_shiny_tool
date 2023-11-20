@@ -5,17 +5,17 @@ ui <- navbarPage(
   title = div(
     div(
       id = "img-id",
-      img(src = "nza_logo_blauw.png", height = "7%", width = "7%",  align = "right")
+      img(src = "nza_logo_blauw.png", height = "6%", width = "6%",  align = "right")
     ),
-    "Draagkracht Draaglast tool"
+    "Draagkracht Draaglast demotool"
   ),
   id = "navbar",
   tabPanel(
     title = "Initiële vragen",
     value = "initieel",
     p("Op basis van de initiële vragen wordt bepaald of het draagkracht draaglast model van toepassing is."),
-    p("Op de ", a(href = "https://www.nza.nl/onderwerpen/jaarverslag/nieuws/2023/07/03/client-staat-centraal-in-nieuwe-vorm-van-bekostiging-wijkverpleging",
-                 "website van de NZa", .noWS = "outside"), " vindt u meer informatie over dit model."),
+    p("Op de ", tags$u(a(href = "https://www.nza.nl/onderwerpen/jaarverslag/nieuws/2023/07/03/client-staat-centraal-in-nieuwe-vorm-van-bekostiging-wijkverpleging",
+                 "website van de NZa", .noWS = "outside")), " vindt u meer informatie over dit model."),
     hr(),
     uiOutput("radios_initieel"),
     hr(),
@@ -40,6 +40,7 @@ ui <- navbarPage(
   # Bootstrap CSS
   header = tags$style(HTML("
         * { font-family: Arial; }
+        a {color: #27348B;}
         #img-id { position: fixed;
           right: 20px;
           top: 0px;}
