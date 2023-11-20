@@ -2,7 +2,13 @@ nza_blauw <- "#27348B"
 
 ui <- navbarPage(
   shinyjs::useShinyjs(),
-  title = "Draagkracht Draaglast tool",
+  title = div(
+    div(
+      id = "img-id",
+      img(src = "nza_logo_blauw.png", height = "7%", width = "7%",  align = "right")
+    ),
+    "Draagkracht Draaglast tool"
+  ),
   id = "navbar",
   tabPanel(
     title = "Initiële vragen",
@@ -33,6 +39,9 @@ ui <- navbarPage(
   ),
   # Bootstrap CSS
   header = tags$style(HTML("
+        #img-id { position: fixed;
+          right: 20px;
+          top: 0px;}
         #cp_initieel_txt {font-size:20px;
                color:red;
                display:block; }
