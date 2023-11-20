@@ -7,16 +7,22 @@ ui <- navbarPage(
       id = "img-id",
       img(src = "nza_logo_blauw.png", height = "6%", width = "6%",  align = "right")
     ),
-    "Draagkracht Draaglast demotool"
+    "Draagkracht Draaglast tool"
   ),
   id = "navbar",
   tabPanel(
     title = "Initiële vragen",
     value = "initieel",
-    p("Op basis van de initiële vragen wordt bepaald of het draagkracht draaglast model van toepassing is."),
-    p("Op de ", tags$u(a(href = "https://www.nza.nl/onderwerpen/jaarverslag/nieuws/2023/07/03/client-staat-centraal-in-nieuwe-vorm-van-bekostiging-wijkverpleging",
-                 "website van de NZa", .noWS = "outside")), " vindt u meer informatie over dit model."),
-    hr(),
+    p("Deze tool is bedoeld om de werking van het Draagkracht Draaglast model te illustreren.", tags$br(),
+      "Op de ", tags$u(a(href = "https://www.nza.nl/onderwerpen/jaarverslag/nieuws/2023/07/03/client-staat-centraal-in-nieuwe-vorm-van-bekostiging-wijkverpleging",
+                 "website van de NZa", .noWS = "outside")), " vindt u meer informatie over dit model.",
+  tags$br(),
+  br(),
+      "De data die wordt ingevuld door de gebruiker wordt enkel gebruikt om een profiel af te leiden.",
+      tags$br(), strong("Er wordt géén data opgeslagen.")),
+  hr(),
+p("Op basis van de initiële vragen wordt bepaald of het draagkracht draaglast model van toepassing is."),
+
     uiOutput("radios_initieel"),
     hr(),
     p("Op basis van de gekozen antwoorden valt de cliënt in profiel:"),
