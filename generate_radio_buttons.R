@@ -44,7 +44,8 @@ generate_radio_buttons <- function(filename = NA, subset = NA){
                                       label = questionList[i], 
                                       choiceNames = lapply(choiceNames[[i]], HTML),
                                       choiceValues = choiceValues[[i]], 
-                                      inline = TRUE, 
+                                      inline = FALSE, 
+                                      width = "800px",
                                       selected = 0))
   }
   return(all_radios)

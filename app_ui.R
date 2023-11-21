@@ -63,7 +63,14 @@ p("Op basis van de initiële vragen wordt bepaald of het draagkracht draaglast m
         .navbar { background-color: white;}
         .navbar-default .navbar-nav > li > a {color:black;}
         .navbar-default .navbar-nav > .active > a,
-        .navbar-default .navbar-nav > .active > a:focus {color: white; background-color: #27348B},
-                  ")
+        .navbar-default .navbar-nav > .active > a:focus {color: white; background-color: #27348B}
+        .shiny-options-group { 
+            margin-top: 0px; }
+        .control-label { padding-bottom: 10px;}
+        div.radio {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          padding-bottom: 5px;}
+                          ")
         )
   )
