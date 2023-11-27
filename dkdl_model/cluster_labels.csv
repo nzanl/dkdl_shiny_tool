@@ -74,11 +74,11 @@ row_id;cluster_id;hoofd_categorie;subgroep;cluster_sort_nr;model_nr;model_naam;c
 32;19;Profiel DKDL 2: Draagkrachtig, geen verhoogde draaglast;gemiddelde ondersteuningsbehoefte;4;7;Draagkracht/draaglast model variant3;DKDL;1
 33;20;Profiel DKDL 3: Draagkrachtig, geen verhoogde draaglast;hoge ondersteuningsbehoefte;5;7;Draagkracht/draaglast model variant3;DKDL;1
 34;23;Profiel DKDL 4: Draagkrachtig, verhoogde draaglast;lage ondersteuningsbehoefte;6;7;Draagkracht/draaglast model variant3;DKDL;3
-35;24;Profiel DKDL 5: Draagkrachtig, verhoogde draaglast;gemiddelde ondersteuningsbehoeft;7;7;Draagkracht/draaglast model variant3;DKDL;3
+35;24;Profiel DKDL 5: Draagkrachtig, verhoogde draaglast;gemiddelde ondersteuningsbehoefte;7;7;Draagkracht/draaglast model variant3;DKDL;3
 36;25;Profiel DKDL 6: Draagkrachtig, verhoogde draaglast;hoge ondersteuningsbehoefte;8;7;Draagkracht/draaglast model variant3;DKDL;3
 37;7;Profiel DKDL 7: Verminderd draagkrachtig, geen verhoogde draaglast;lage ondersteuningsbehoefte;9;7;Draagkracht/draaglast model variant3;DKDL;2
 38;8;Profiel DKDL 8: Verminderd draagkrachtig, geen verhoogde draaglast;gemiddelde ondersteuningsbehoefte;10;7;Draagkracht/draaglast model variant3;DKDL;2
-39;9;Profiel DKDL 9: Verminderd draagkrachtig, geen verhoogde draaglast;hoge ondersteuningsbehoefteg;11;7;Draagkracht/draaglast model variant3;DKDL;2
+39;9;Profiel DKDL 9: Verminderd draagkrachtig, geen verhoogde draaglast;hoge ondersteuningsbehoefte;11;7;Draagkracht/draaglast model variant3;DKDL;2
 40;12;Profiel DKDL 10: Verminderd draagkrachtig, verhoogde draaglast;lage ondersteuningsbehoefte;12;7;Draagkracht/draaglast model variant3;DKDL;4
 41;13;Profiel DKDL 11: Verminderd draagkrachtig, verhoogde draaglast;gemiddelde ondersteuningsbehoefte;13;7;Draagkracht/draaglast model variant3;DKDL;4
 42;14;Profiel DKDL 12: Verminderd draagkrachtig, verhoogde draaglast;hoge ondersteuningsbehoefte;14;7;Draagkracht/draaglast model variant3;DKDL;4

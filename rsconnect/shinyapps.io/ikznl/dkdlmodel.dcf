@@ -5,7 +5,7 @@ account: ikznl
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 10482239
-bundleId: 7948753
+bundleId: 7964952
 url: https://ikznl.shinyapps.io/dkdlmodel/
 version: 1
 asMultiple: FALSE
